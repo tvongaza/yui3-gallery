@@ -212,10 +212,10 @@ Y.Dispatcher = Y.Base.create(DISPATCHER, Y.Base, [], {
 						var d = jsNode.get('ownerDocument'),
 						h = d.one('head') || d.get('documentElement'),
 						newScript = Y.Node.create('<' + SC + '></' + SC + '>');
-						h.replaceChild(jsNode, h.appendChild(newScript));
 						if (jsNode._node.text) {
 							newScript._node.text = jsNode._node.text;
 						}
+						h.replaceChild(jsNode, h.appendChild(newScript));
 						jsNode.remove();
 						//removes the script node immediately after executing it
 					}
